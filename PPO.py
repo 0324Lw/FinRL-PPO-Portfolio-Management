@@ -16,18 +16,18 @@ import time
 class PPOConfig:
     def __init__(self):
         # 基础训练参数
-        self.total_steps = 1000000  # 总训练步数
+        self.total_steps = 5000000  # 总训练步数
         self.batch_size = 8192  # 每次收集多少步数据进行一次更新
-        self.mini_batch_size = 1024  # 网络更新时的 Mini-batch
-        self.n_epochs = 15  # 每次更新迭代的 Epoch 数
+        self.mini_batch_size = 512  # 网络更新时的 Mini-batch
+        self.n_epochs = 5  # 每次更新迭代的 Epoch 数
 
         # PPO 核心超参数
         self.lr = 2e-4  # 初始学习率
-        self.gamma = 0.995  # 折扣因子
-        self.gae_lambda = 0.95  # GAE 优势估计平滑参数
-        self.clip_epsilon = 0.3  # PPO 裁剪范围
+        self.gamma = 0.99  # 折扣因子
+        self.gae_lambda = 0.90  # GAE 优势估计平滑参数
+        self.clip_epsilon = 0.1  # PPO 裁剪范围
         self.vloss_coef = 0.5  # 价值损失系数
-        self.ent_coef_start = 0.01  # 初始探索熵系数
+        self.ent_coef_start = 0.005  # 初始探索熵系数
         self.ent_coef_end = 0.00005  # 最终探索熵系数 (线性衰减)
         self.max_grad_norm = 0.5  # 梯度裁剪防爆炸
 
