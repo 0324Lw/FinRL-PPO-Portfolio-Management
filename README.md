@@ -48,6 +48,15 @@ $$r_{t} = \frac{R_{t}^{port}}{\sigma_{t}^{downside} + 0.01} - \lambda_{1}C^{comm
 1. **硬截断限幅**：将放大系数缩放后的单步总奖励严格限幅 (Clip) 在 **[-2.0, 2.0]** 之间。
 2. **破产与回撤兜底**：若单日账户净值回撤超过 5% 或触发破产保护，直接给予 **-2.0** 的极值惩罚，为价值网络提供最清晰的风险红线。
 
+## 💾 数据集下载 (Dataset Download)
+
+本项目已将数据集开源托管于 [Hugging Face 平台](https://huggingface.co/datasets/LW0324/FinRL-Ashare-Stock-Data)。
+
+请在运行训练脚本前，确保已安装 `huggingface_hub` 依赖：
+```bash
+pip install huggingface_hub
+```
+
 ## 🛠️ 环境依赖 (Requirements)
 
 本项目基于 Python 3.10 开发，推荐使用国内清华源极速配置环境：
